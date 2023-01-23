@@ -1,0 +1,16 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+import yfinance as yf
+
+# Use yfinance to get the historical stock data for the past 12 months
+tesla = yf.Ticker("TSLA")
+stock_data = tesla.history(period="1y")
+
+# Create a line chart of the closing price
+plt.plot(stock_data['Close'])
+
+# Add labels and a title to the chart
+plt.xlabel('Date')
+plt.ylabel('Closing Price')
+plt.title('Tesla Stock Price (Past 12 months)')
+plt.show()
